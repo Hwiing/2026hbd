@@ -1,0 +1,80 @@
+.letter-mode { background: #171d1a; color: #e8e0ce; }
+.letter-mode .site-header { background: #171d1a99; border-color: #d8cda510; transition: background 1.8s, color 1.8s; }
+.letter-mode .brand { color: #c5bdab; font-size: 18px; font-weight: 400; letter-spacing: -.4px; }
+.letter-mode .audio-toggle { color: #9d9c87; }
+.letter-mode .audio-toggle:hover { color: #eee4cd; }
+.letter-story { isolation: isolate; background: #171d1a; }
+.letter-atmosphere { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: -1; }
+.letter-glow { position: absolute; width: 90vw; height: 110vh; filter: blur(55px); border-radius: 50%; opacity: .55; }
+.glow-left { top: -30%; left: -45%; background: radial-gradient(ellipse, #796c402d, transparent 65%); }
+.glow-right { bottom: -65%; right: -35%; background: radial-gradient(ellipse, #97735325, transparent 65%); }
+.letter-grain { position: absolute; inset: 0; opacity: .025; background-image: radial-gradient(#e1d7ad 0.6px, transparent .6px); background-size: 3px 4px; }
+.letter-vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 30%, #060b0973 100%); }
+.letter-story .letter-panel { padding: 115px 60px 65px; }
+.letter-cover-content { text-align: center; }
+.letter-cover-mark { display: block; width: 1px; height: 52px; background: linear-gradient(transparent, #b6a374b0); margin: 0 auto 43px; }
+.letter-cover-content h1 { font: 400 clamp(28px, 3vw, 42px)/1.8 'Gowun Batang', serif; letter-spacing: -.9px; color: #e9e0cd; word-break: keep-all; }
+.letter-story .scroll-cue { color: #a69c7b; opacity: .6; bottom: 44px; }
+.letter-composition { width: min(100%, 1020px); }
+.letter-composition.has-photo { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); align-items: center; gap: 90px; }
+.letter-composition.photo-on-left.has-photo { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); }
+.letter-content { min-width: 0; }
+.letter-photo { width: 100%; max-width: 335px; aspect-ratio: 3/4; padding: 8px 8px 25px; margin: 0; background: #e2dbca; box-shadow: 0 25px 65px #03070580, 0 0 0 1px #ece3cb0c; justify-self: end; order: 2; }
+.photo-on-left .letter-photo { order: 0; justify-self: start; }
+.letter-photo img { display: block; width: 100%; height: 100%; object-fit: contain; background: #1d211d; filter: saturate(.82) sepia(.06) contrast(.97); }
+.letter-story .letter-sentence { font: 400 clamp(22px, 1.8vw, 27px)/2.05 'Gowun Batang', serif; max-width: none; letter-spacing: -.7px; text-align: left; color: #d8d1c0; word-break: keep-all; }
+.letter-line { display: block; }
+.letter-story .letter-passage:not(:has(.has-photo)) .letter-content { max-width: 850px; margin: 0 auto; }
+.letter-story .letter-passage:not(:has(.has-photo)) .letter-sentence { text-align: center; font-size: clamp(24px, 2.2vw, 31px); }
+.letter-quote { margin: 0 auto; padding: 20px 0 20px 38px; max-width: 820px; border-left: 1px solid #9c8a5e59; }
+.letter-verse .letter-sentence { font-size: clamp(22px, 2vw, 28px); line-height: 2.05; color: #e0d5b9; }
+.letter-citation { display: block; margin-top: 33px; font: 400 12px 'Gowun Batang', serif; letter-spacing: .4px; color: #a89b78; text-align: right; }
+.letter-closing .letter-composition:not(.has-photo) { max-width: 960px; }
+.letter-closing .letter-sentence { font-size: clamp(24px, 2vw, 29px); line-height: 2.2; text-align: center; color: #bcb8a6; }
+.letter-closing .letter-line:last-child { font-weight: 700; color: #eee3c9; margin-top: 21px; }
+.letter-story .letter-heart { display: block; margin: 43px auto 0; color: #bda281; opacity: .65; }
+
+@media (min-width: 1700px) {
+  .letter-composition.has-photo { max-width: 1130px; gap: 120px; }
+  .letter-photo { max-width: 370px; }
+}
+@media (max-width: 1100px) {
+  .letter-story .letter-panel { padding-left: 50px; padding-right: 50px; }
+  .letter-composition.has-photo { gap: 50px; }
+  .letter-photo { max-width: 290px; }
+  .letter-story .letter-sentence { font-size: 22px; }
+}
+@media (max-width: 760px) {
+  .letter-mode .site-header { height: 61px; }
+  .letter-mode .brand { font-size: 17px; }
+  .letter-story .letter-panel { padding: 100px 28px 45px; }
+  .letter-cover-content h1 { font-size: 27px; max-width: 300px; }
+  .letter-cover-mark { height: 40px; margin-bottom: 32px; }
+  .letter-composition.has-photo, .letter-composition.photo-on-left.has-photo { display: flex; flex-direction: column; gap: 36px; }
+  .letter-photo, .photo-on-left .letter-photo { width: auto; height: 235px; max-width: 100%; aspect-ratio: 3/4; padding: 6px 6px 18px; order: 0; flex-shrink: 0; }
+  .letter-story .letter-sentence { font-size: 18px; line-height: 2; letter-spacing: -.5px; text-align: center; }
+  .letter-story .letter-passage:not(:has(.has-photo)) .letter-sentence { font-size: 21px; }
+  .letter-quote { padding: 5px 0 5px 22px; }
+  .letter-verse .letter-sentence { text-align: left; font-size: 20px; line-height: 2; }
+  .letter-citation { font-size: 11px; margin-top: 25px; }
+  .letter-closing .letter-sentence { font-size: 21px; line-height: 2.05; }
+  .letter-closing .letter-line:last-child { margin-top: 24px; }
+  .letter-story .letter-heart { margin-top: 32px; }
+}
+@media (max-height: 740px) and (min-width: 761px) {
+  .letter-story .letter-panel { padding-top: 100px; padding-bottom: 40px; }
+  .letter-photo { max-width: 270px; }
+  .letter-story .letter-sentence { font-size: 23px; }
+}
+@media (max-width: 760px) and (max-height: 720px) {
+  .letter-story .letter-panel { padding-top: 86px; padding-bottom: 30px; }
+  .letter-composition.has-photo { gap: 22px; }
+  .letter-photo, .photo-on-left .letter-photo { height: 180px; }
+  .letter-story .letter-sentence { font-size: 17px; }
+  .letter-verse .letter-sentence { font-size: 18px; }
+  .letter-closing .letter-sentence { font-size: 19px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .letter-line, .letter-cover-content { opacity: 1 !important; transform: none !important; }
+  .letter-story .letter-panel { min-height: 100svh; height: auto; }
+}
